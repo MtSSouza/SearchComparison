@@ -34,12 +34,15 @@ namespace SearchComparison
             {
                 if (lista[i] == int.Parse(textBox1.Text))
                 {
-                    label1.Text += i + " " + "foi";
+                    label1.Text += i + " " + "Existe esse elemento";
                 }
-                else if (int.Parse(textBox1.Text))
+                else if (lista.Count() <= int.Parse(textBox1.Text))
                 {
-                    label1.Text += "n foi";
-                    
+                    label1.Text = "Não existe esse elemento";
+                }
+                else 
+                {
+                    label1.Text = "Não existe esse elemento";
                 }
             }
         }
