@@ -18,9 +18,12 @@ namespace SearchComparison
             InitializeComponent();
         }
 
-        #region LinearSearchWithNumbers
+        #region LinearSearch
+
+        #region WithNumbers
+
         public List<int> lista = new List<int>();
-        private const int listCount = 1000;
+        private const int listCount = 10000;
         private int indexSearch;
 
         private void Create_ListNumbers1(object sender, EventArgs e)
@@ -29,9 +32,8 @@ namespace SearchComparison
             Random rand = new Random();
             for (int i = 0; i < listCount; i++)
             {
-                lista.Add(rand.Next(10000));
+                lista.Add(rand.Next(listCount/10));
             }
-            lista.Sort();
             listBox1.Items.Clear();
            for (int i = 0; i < listCount; i++)
             {
@@ -42,6 +44,7 @@ namespace SearchComparison
         private void Find_Linear(object sender, EventArgs e)
         {
            label1.Text = "";
+           label4.Text = "";
             for(int i = 0; i < lista.Count(); i++)
             {
                 if (lista[i] == int.Parse(textBox1.Text)) 
@@ -60,7 +63,8 @@ namespace SearchComparison
         {
             indexSearch = int.Parse(textBox2.Text);
             label4.Text = "";
-            if (int.Parse(textBox2.Text) > 1000 || int.Parse(textBox2.Text) < 0)
+            label1.Text = "";
+            if (int.Parse(textBox2.Text) > listCount || int.Parse(textBox2.Text) < 0)
             {
                 label4.Text = "Please, put a number between 0 and 1000";
             }
@@ -69,9 +73,11 @@ namespace SearchComparison
                 label4.Text = "The number in this position is " + lista[indexSearch - 1].ToString();
             }
         }
+
         #endregion
 
-        #region LinearSearchWithWords
+        #region WithWords
+
         char[] spliter = {' '};
         char[] spliters = {' ', ',', '.', ':', ';'};
         private int letter;
@@ -106,8 +112,10 @@ namespace SearchComparison
 
             label7.Text = "There are " + word.Length.ToString() + " word(s) in the current text";
         }
+
         #endregion
 
+        #endregion
 
 
 
