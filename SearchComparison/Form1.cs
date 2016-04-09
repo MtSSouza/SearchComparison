@@ -12,15 +12,18 @@ namespace SearchComparison
 {
     public partial class Form1 : Form
     {
-        public List<int> lista = new List<int>();
-        private const int listCount = 1000;
-        private int indexSearch;
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        #region LinearSearchWithNumbers
+        public List<int> lista = new List<int>();
+        private const int listCount = 1000;
+        private int indexSearch;
+
+        private void Create_ListNumbers1(object sender, EventArgs e)
         {
             
             Random rand = new Random();
@@ -36,7 +39,7 @@ namespace SearchComparison
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Find_Linear(object sender, EventArgs e)
         {
            label1.Text = "";
             for(int i = 0; i < lista.Count(); i++)
@@ -53,14 +56,65 @@ namespace SearchComparison
             
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Find_Position(object sender, EventArgs e)
         {
             indexSearch = int.Parse(textBox2.Text);
             label4.Text = "";
-            label4.Text = "The number in this position is " + lista[indexSearch - 1].ToString();
+            if (int.Parse(textBox2.Text) > 1000 || int.Parse(textBox2.Text) < 0)
+            {
+                label4.Text = "Please, put a number between 0 and 1000";
+            }
+            else
+            {
+                label4.Text = "The number in this position is " + lista[indexSearch - 1].ToString();
+            }
         }
+        #endregion
 
-      
+        #region LinearSearchWithWords
+        char[] spliter = {' '};
+        char[] spliters = {' ', ',', '.', ':', ';'};
+        private int letter;
+
+        private void Add_Text(object sender, EventArgs e)
+        {
+            label5.Text = "";
+            label6.Text = "";
+            label7.Text = "";
+            label8.Text = "";
+            string txt = textBox3.Text;
+            string[] word = txt.Split(spliter);
+            string[] words = txt.Split(spliters);
+            
+            foreach (string w in words)
+            {
+                if (w == textBox4.Text)
+                {
+                    label5.Text = "The word '" + textBox4.Text + "' exist in the current text";
+                    letter = w.Length;
+                    label8.Text = "The word have " + letter.ToString() + " letters";
+                }
+            }
+            if (textBox4.Text == "")
+            {
+                label5.Text = "There is no word to be found.";
+            }
+            else if (label5.Text == "")
+            {
+                label5.Text = "The word '" + textBox4.Text + "' does not exist in the current text";
+            }
+
+            label7.Text = "There are " + word.Length.ToString() + " word(s) in the current text";
+        }
+        #endregion
+
+
+
+
+
+
+
+
 
 
     }
