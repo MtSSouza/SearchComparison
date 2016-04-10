@@ -19,7 +19,6 @@ namespace SearchComparison
         }
 
 
-
         public List<int> lista = new List<int>();
         public List<int> lista2 = new List<int>();
         public const int listCount = 1000;
@@ -31,7 +30,7 @@ namespace SearchComparison
             Random rand = new Random();
             for (int i = 0; i < listCount; i++)
             {
-                lista.Add(rand.Next(900000));
+                lista.Add(i * 10 + rand.Next(10));
                 lista2.Add(lista[i]);
             }
             listBox1.Items.Clear();
@@ -52,12 +51,16 @@ namespace SearchComparison
 
         #region WithNumbers
 
+        private int times2 = 0;
+
         private void Find_Linear(object sender, EventArgs e)
         {
            label1.Text = "";
            label4.Text = "";
+
             for(int i = 0; i < lista.Count(); i++)
             {
+                times2++;
                 if (lista[i] == int.Parse(textBox1.Text)) 
                 {
                     label1.Text += "The number has been found in the position" + " " + (i + 1) + "! " + "\n";
@@ -133,6 +136,7 @@ namespace SearchComparison
 
         private int target;
         private int times = 0;
+
         private void Find_Binary(object sender, EventArgs e)
         {
             target = int.Parse(textBox6.Text);
