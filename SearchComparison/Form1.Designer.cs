@@ -55,6 +55,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -219,6 +220,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.listBox2);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.label9);
@@ -321,6 +323,15 @@
             this.tabPage2.Text = "WordSearch";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(536, 203);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(10, 13);
+            this.label11.TabIndex = 19;
+            this.label11.Text = " ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +378,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label label11;
 
     }
 }

@@ -18,13 +18,11 @@ namespace SearchComparison
             InitializeComponent();
         }
 
-        #region LinearSearch
 
-        #region WithNumbers
 
         public List<int> lista = new List<int>();
         public List<int> lista2 = new List<int>();
-        private const int listCount = 10000;
+        public const int listCount = 1000;
         private int indexSearch;
 
         private void Create_ListNumbers1(object sender, EventArgs e)
@@ -33,7 +31,7 @@ namespace SearchComparison
             Random rand = new Random();
             for (int i = 0; i < listCount; i++)
             {
-                lista.Add(rand.Next(listCount));
+                lista.Add(rand.Next(900000));
                 lista2.Add(lista[i]);
             }
             listBox1.Items.Clear();
@@ -49,6 +47,10 @@ namespace SearchComparison
             }
            
         }
+
+        #region LinearSearch
+
+        #region WithNumbers
 
         private void Find_Linear(object sender, EventArgs e)
         {
@@ -129,9 +131,47 @@ namespace SearchComparison
 
         #region BinarySearch
 
+        private int target;
+        private int times = 0;
         private void Find_Binary(object sender, EventArgs e)
         {
+            target = int.Parse(textBox6.Text);
+            int index = BinarySearch(lista2 , target, 0, lista2.Count(), ref times);
 
+            Console.WriteLine(times.ToString() + " elemento(s) testado(s).");
+            if (index < lista2.Count() && lista2[index] == target)
+            {
+                label11.Text = "Numero " + target + " encontrado!";
+            }
+            else
+            {
+                label11.Text = "Numero " + target + " nao existe nesse conjunto!";
+            }
+        }
+
+        static int BinarySearch(List<int> lista2, int target, int left, int right, ref int times)
+        {
+            if (left == right - 1)
+            {
+                return right;
+            }
+            else
+            {
+                times++;
+                int middle = (left + right) / 2;
+                if (lista2[middle] == target)
+                {
+                    return middle;
+                }
+                else if (lista2[middle] < target)
+                {
+                    return BinarySearch(lista2, target, middle, right, ref times);
+                }
+                else
+                {
+                    return BinarySearch(lista2, target, left, middle, ref times);
+                }
+            }
         }
 
         #endregion
