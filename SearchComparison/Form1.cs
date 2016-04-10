@@ -23,6 +23,7 @@ namespace SearchComparison
         #region WithNumbers
 
         public List<int> lista = new List<int>();
+        public List<int> lista2 = new List<int>();
         private const int listCount = 10000;
         private int indexSearch;
 
@@ -32,13 +33,21 @@ namespace SearchComparison
             Random rand = new Random();
             for (int i = 0; i < listCount; i++)
             {
-                lista.Add(rand.Next(listCount/5));
+                lista.Add(rand.Next(listCount));
+                lista2.Add(lista[i]);
             }
             listBox1.Items.Clear();
-           for (int i = 0; i < listCount; i++)
+            for (int i = 0; i < listCount; i++)
             {
                 listBox1.Items.Add(lista[i]);
             }
+            lista2.Sort();
+            listBox2.Items.Clear();
+           for (int i = 0; i < listCount; i++)
+            {
+                listBox2.Items.Add(lista2[i]);
+            }
+           
         }
 
         private void Find_Linear(object sender, EventArgs e)

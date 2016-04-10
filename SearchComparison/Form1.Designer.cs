@@ -103,6 +103,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 238);
             this.listBox1.TabIndex = 6;
+            this.listBox1.Tag = "lista1";
             // 
             // label2
             // 
@@ -240,7 +241,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(786, 452);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "LinearSearch";
+            this.tabPage1.Text = "NumberSearch";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -257,7 +258,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(786, 452);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "BinarSearch";
+            this.tabPage2.Text = "WordSearch";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -317,6 +318,7 @@
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(120, 238);
             this.listBox2.TabIndex = 18;
+            this.listBox2.Tag = "lista2";
             // 
             // Form1
             // 
@@ -325,7 +327,7 @@
             this.ClientSize = new System.Drawing.Size(801, 504);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "+";
+            this.Text = "SearchComparison";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
