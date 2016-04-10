@@ -125,6 +125,14 @@ namespace SearchComparison
         #endregion
 
 
+        #endregion
+
+        #region BinarySearch
+
+        private void Find_Binary(object sender, EventArgs e)
+        {
+
+        }
 
         #endregion
 
