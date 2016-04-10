@@ -32,7 +32,7 @@ namespace SearchComparison
             Random rand = new Random();
             for (int i = 0; i < listCount; i++)
             {
-                lista.Add(rand.Next(listCount/10));
+                lista.Add(rand.Next(listCount/5));
             }
             listBox1.Items.Clear();
            for (int i = 0; i < listCount; i++)
@@ -114,6 +114,8 @@ namespace SearchComparison
         }
 
         #endregion
+
+
 
         #endregion
 
