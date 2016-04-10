@@ -47,14 +47,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -244,22 +244,14 @@
             this.tabPage1.Text = "NumberSearch";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // listBox2
             // 
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(786, 452);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "WordSearch";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(410, 143);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(120, 238);
+            this.listBox2.TabIndex = 18;
+            this.listBox2.Tag = "lista2";
             // 
             // button5
             // 
@@ -291,9 +283,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(673, 72);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 13);
+            this.label10.Size = new System.Drawing.Size(73, 13);
             this.label10.TabIndex = 14;
-            this.label10.Text = "Binar Search";
+            this.label10.Text = "Binary Search";
             // 
             // textBox6
             // 
@@ -310,15 +302,24 @@
             this.button6.TabIndex = 12;
             this.button6.Text = "Find";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Find_Binary);
             // 
-            // listBox2
+            // tabPage2
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(410, 143);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 238);
-            this.listBox2.TabIndex = 18;
-            this.listBox2.Tag = "lista2";
+            this.tabPage2.Controls.Add(this.button4);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(786, 452);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "WordSearch";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
