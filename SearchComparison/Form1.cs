@@ -30,7 +30,7 @@ namespace SearchComparison
             Random rand = new Random();
             for (int i = 0; i < listCount; i++)
             {
-                lista.Add(i * 10 + rand.Next(10));
+                lista.Add(rand.Next(1500));
                 lista2.Add(lista[i]);
             }
             listBox1.Items.Clear();
@@ -63,7 +63,7 @@ namespace SearchComparison
                 times2++;
                 if (lista[i] == int.Parse(textBox1.Text)) 
                 {
-                    label1.Text += "The number has been found in the position" + " " + (i + 1) + "! " + "\n";
+                    label1.Text = "The number " + textBox1.Text + " has been found";
                 }
             }
             if (label1.Text == "" || label1.Text == "This number has not been found! Please, put another one!")
