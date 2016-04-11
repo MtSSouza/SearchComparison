@@ -51,9 +51,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -226,9 +223,6 @@
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.listBox2);
-            this.tabPage1.Controls.Add(this.button5);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.textBox5);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.textBox6);
             this.tabPage1.Controls.Add(this.button6);
@@ -283,31 +277,6 @@
             this.listBox2.Size = new System.Drawing.Size(120, 238);
             this.listBox2.TabIndex = 18;
             this.listBox2.Tag = "lista2";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(536, 136);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 32);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Find";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(662, 114);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 26);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Search for position \r\n(1 a 10000)\r\n";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(662, 143);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 15;
             // 
             // label10
             // 
@@ -391,9 +360,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button6;
