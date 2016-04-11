@@ -202,7 +202,10 @@ namespace SearchComparison
         Stopwatch stopwatch = new Stopwatch();
         private void Graphics(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < listCount; i++) 
+            {
+                
+            }
         }
         
 
