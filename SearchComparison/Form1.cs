@@ -16,21 +16,23 @@ namespace SearchComparison
         public Form1()
         {
             InitializeComponent();
+            label13.Text = "    These lists are equals, But in the first listbox," + "\n" + "the list is in the normal form and in the second" + "\n" + "is in the sorted form. The binary search only is" + "\n" + "possible when the structure has been sorted.";
         }
 
-
+        
         public List<int> lista = new List<int>();
         public List<int> lista2 = new List<int>();
-        public const int listCount = 100;
+        public const int listCount = 1000;
         private int indexSearch;
 
         private void Create_ListNumbers1(object sender, EventArgs e)
         {
-            
+            lista.Clear();
+            lista2.Clear();
             Random rand = new Random();
             for (int i = 0; i < listCount; i++)
             {
-                lista.Add(rand.Next(100));
+                lista.Add(rand.Next(rand.Next(100000)));
                 lista2.Add(lista[i]);
             }
             listBox1.Items.Clear();
@@ -40,7 +42,7 @@ namespace SearchComparison
             }
             lista2.Sort();
             listBox2.Items.Clear();
-           for (int i = 0; i < listCount; i++)
+            for (int i = 0; i < listCount; i++)
             {
                 listBox2.Items.Add(lista2[i]);
             }
@@ -61,21 +63,20 @@ namespace SearchComparison
             for(int i = 0; i < lista.Count(); i++)
             {
                 times2++;
-                if (lista[i] == int.Parse(textBox1.Text)) 
+                if (lista[i] == int.Parse(textBox1.Text))
                 {
                     label1.Text = "The number " + textBox1.Text + " has been found!";
-                    label4.Text = times2  + " elements tested";
-                    times2 = 0;
+                    label4.Text = times2 + " elements tested";
                     break;
+                }
+                else if (lista[i] != int.Parse(textBox1.Text))
+                {
+                    label1.Text = "The number " + textBox1.Text + " has not been found!";
+                    label4.Text = times2 + " elements tested";
                 }
                 
             }
-            if (label1.Text == "" || label1.Text == "The number " + textBox1.Text + " has not been found!")
-            {
-                label1.Text = "The number " + textBox1.Text + " has not been found!";
-                label4.Text = times2 + " elements tested";
-                times2 = 0;
-            }
+            times2 = 0;
             
         }
 
@@ -111,25 +112,28 @@ namespace SearchComparison
             string txt = textBox3.Text;
             string[] word = txt.Split(spliter);
             string[] words = txt.Split(spliters);
-            
-            foreach (string w in words)
-            {
-                if (w == textBox4.Text)
-                {
-                    label5.Text = "The word '" + textBox4.Text + "' exist in the current text";
-                    letter = w.Length;
-                    label8.Text = "The word have " + letter.ToString() + " letters";
-                }
-            }
+
             if (textBox4.Text == "")
             {
                 label5.Text = "There is no word to be found.";
             }
-            else if (label5.Text == "")
+            else
             {
-                label5.Text = "The word '" + textBox4.Text + "' does not exist in the current text";
+                foreach (string w in words)
+                {
+                    if (w == textBox4.Text)
+                    {
+                        label5.Text = "The word '" + textBox4.Text + "' exist in the current text";
+                        letter = w.Length;
+                        label8.Text = "The word have " + letter.ToString() + " letters";
+                        break;
+                    }
+                    else if (w != textBox4.Text)
+                    {
+                        label5.Text = "The word '" + textBox4.Text + "' does not exist in the current text";
+                    }
+                }
             }
-
             label7.Text = "There are " + word.Length.ToString() + " word(s) in the current text";
         }
 
