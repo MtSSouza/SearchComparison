@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,8 @@ namespace SearchComparison
             label13.Text = "    These lists are equals, But in the first listbox," + "\n" + "the list is in the normal form and in the second" + "\n" + "is in the sorted form. The binary search only is" + "\n" + "possible when the structure has been sorted.";
         }
 
-        
+        #region CreateTheLists
+
         public List<int> lista = new List<int>();
         public List<int> lista2 = new List<int>();
         public const int listCount = 1000;
@@ -49,6 +51,8 @@ namespace SearchComparison
            
         }
 
+        #endregion
+
         #region LinearSearch
 
         #region WithNumbers
@@ -59,7 +63,7 @@ namespace SearchComparison
         {
            label1.Text = "";
            label4.Text = "";
-
+           stopwatch.Start();
             for(int i = 0; i < lista.Count(); i++)
             {
                 times2++;
@@ -67,16 +71,19 @@ namespace SearchComparison
                 {
                     label1.Text = "The number " + textBox1.Text + " has been found!";
                     label4.Text = times2 + " elements tested";
+                    stopwatch.Stop();
                     break;
                 }
                 else if (lista[i] != int.Parse(textBox1.Text))
                 {
                     label1.Text = "The number " + textBox1.Text + " has not been found!";
                     label4.Text = times2 + " elements tested";
+                    stopwatch.Stop();
                 }
                 
             }
             times2 = 0;
+            Console.WriteLine(stopwatch.Elapsed);
             
         }
 
@@ -192,6 +199,12 @@ namespace SearchComparison
 
         #endregion
 
+        Stopwatch stopwatch = new Stopwatch();
+        private void Graphics(object sender, EventArgs e)
+        {
+
+        }
+        
 
 
 
