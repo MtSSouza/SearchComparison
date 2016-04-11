@@ -21,7 +21,7 @@ namespace SearchComparison
 
         public List<int> lista = new List<int>();
         public List<int> lista2 = new List<int>();
-        public const int listCount = 1000;
+        public const int listCount = 100;
         private int indexSearch;
 
         private void Create_ListNumbers1(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace SearchComparison
             Random rand = new Random();
             for (int i = 0; i < listCount; i++)
             {
-                lista.Add(rand.Next(1500));
+                lista.Add(rand.Next(100));
                 lista2.Add(lista[i]);
             }
             listBox1.Items.Clear();
@@ -63,12 +63,18 @@ namespace SearchComparison
                 times2++;
                 if (lista[i] == int.Parse(textBox1.Text)) 
                 {
-                    label1.Text = "The number " + textBox1.Text + " has been found";
+                    label1.Text = "The number " + textBox1.Text + " has been found!";
+                    label4.Text = times2  + " elements tested";
+                    times2 = 0;
+                    break;
                 }
+                
             }
-            if (label1.Text == "" || label1.Text == "This number has not been found! Please, put another one!")
+            if (label1.Text == "" || label1.Text == "The number " + textBox1.Text + " has not been found!")
             {
-                label1.Text = "This number has not been found! Please, put another one!";
+                label1.Text = "The number " + textBox1.Text + " has not been found!";
+                label4.Text = times2 + " elements tested";
+                times2 = 0;
             }
             
         }
@@ -80,11 +86,11 @@ namespace SearchComparison
             label1.Text = "";
             if (int.Parse(textBox2.Text) > listCount || int.Parse(textBox2.Text) < 0)
             {
-                label4.Text = "Please, put a number between 0 and 1000";
+                label1.Text = "Please, put a number between 0 and " + listCount;
             }
             else
             {
-                label4.Text = "The number in this position is " + lista[indexSearch - 1].ToString();
+                label1.Text = "The number in this position is " + lista[indexSearch - 1].ToString();
             }
         }
 
@@ -142,14 +148,16 @@ namespace SearchComparison
             target = int.Parse(textBox6.Text);
             int index = BinarySearch(lista2 , target, 0, lista2.Count(), ref times);
 
-            Console.WriteLine(times.ToString() + " elemento(s) testado(s).");
+            label12.Text = times.ToString() + " elements tested";
             if (index < lista2.Count() && lista2[index] == target)
             {
-                label11.Text = "Numero " + target + " encontrado!";
+                label11.Text = "The number " + target + " has been found!";
+                times = 0;
             }
             else
             {
-                label11.Text = "Numero " + target + " nao existe nesse conjunto!";
+                label11.Text = "The number " + target + " has not been found!";
+                times = 0;
             }
         }
 

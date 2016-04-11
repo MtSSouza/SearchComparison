@@ -47,6 +47,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,7 +56,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -220,6 +221,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.listBox2);
             this.tabPage1.Controls.Add(this.button5);
@@ -245,6 +247,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "NumberSearch";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(539, 191);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(10, 13);
+            this.label11.TabIndex = 19;
+            this.label11.Text = " ";
             // 
             // listBox2
             // 
@@ -323,14 +334,13 @@
             this.tabPage2.Text = "WordSearch";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // label12
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(536, 203);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(10, 13);
-            this.label11.TabIndex = 19;
-            this.label11.Text = " ";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(553, 216);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 13);
+            this.label12.TabIndex = 20;
             // 
             // Form1
             // 
@@ -379,6 +389,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
 
     }
 }
