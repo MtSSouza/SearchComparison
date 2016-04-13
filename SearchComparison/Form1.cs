@@ -50,14 +50,17 @@ namespace SearchComparison
             }
            
         }
+        Stopwatch stopwatch = new Stopwatch();
 
         #endregion
+
 
         #region LinearSearch
 
         #region WithNumbers
 
-        private int times2 = 0;
+        private float times2 = 0;
+        public List<float> timer = new List<float>();
 
         private void Find_Linear(object sender, EventArgs e)
         {
@@ -67,11 +70,16 @@ namespace SearchComparison
             for(int i = 0; i < lista.Count(); i++)
             {
                 times2++;
+                timer.Add(stopwatch.ElapsedMilliseconds);
+                Console.WriteLine(timer[i]);
+                chart1.Series["Linear"].Points.AddXY(timer[i], times2);
                 if (lista[i] == int.Parse(textBox1.Text))
                 {
                     label1.Text = "The number " + textBox1.Text + " has been found!";
                     label4.Text = times2 + " elements tested";
                     stopwatch.Stop();
+
+
                     break;
                 }
                 else if (lista[i] != int.Parse(textBox1.Text))
@@ -80,7 +88,9 @@ namespace SearchComparison
                     label4.Text = times2 + " elements tested";
                     stopwatch.Stop();
                 }
+
                 
+
             }
             times2 = 0;
             Console.WriteLine(stopwatch.Elapsed);
@@ -198,22 +208,6 @@ namespace SearchComparison
         }
 
         #endregion
-
-        Stopwatch stopwatch = new Stopwatch();
-        private void Graphics(object sender, EventArgs e)
-        {
-            for (int i = 0; i < listCount; i++) 
-            {
-                
-            }
-        }
-        
-
-
-
-
-
-
 
 
     }
